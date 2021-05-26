@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+export ROOT=$(git rev-parse --show-toplevel)
+IMAGE=nicor88/dbt
+TAG=0.19.1-python3.8.10
+docker build -t ${IMAGE}:${TAG} ${ROOT}
+
+docker run -it ${IMAGE}:${TAG} dbt "$@"
