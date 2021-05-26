@@ -23,10 +23,11 @@ jobs:
       - name: Set tag
         run: |
           export TAG=$(cat TAG)
-          echo "::set-output name=DOCKER_TAG::$TAG"
+          echo $TAG
+          echo ''::set-output name=DOCKER_TAG::$TAG'
         id: set-tag
       - name: Push to Docker Hub
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: nicor88/dbt:${{ steps.set-tag.outputs.DOCKER_TAG }}"
+          tags: nicor88/dbt:${{ steps.set-tag.outputs.DOCKER_TAG }}
