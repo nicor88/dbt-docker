@@ -1,4 +1,4 @@
-VERSION_TAG ?=0.19.1-python3.8.10
+VERSION_TAG ?=`cat TAG`
 IMAGE ?=nicor88/dbt
 
 build:
