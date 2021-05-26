@@ -1,4 +1,4 @@
-![CD status](https://github.com/nicor88/dbt-docker/actions/workflows/dockerhub_publishing/badge.svg)
+![CD status](https://github.com/nicor88/dbt-docker/actions/workflows/dockerhub_publishing.yml/badge.svg)
 
 
 # dbt-docker
