@@ -15,12 +15,17 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USER }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
-      - name: Push to Docker Hub
+      - name: Push to Docker Hub with latest
         uses: docker/build-push-action@v2
         with:
           push: true
           tags: nicor88/dbt:latest
-      - name: Read tag
+      - name: Set tag
         run: |
           export TAG=$(cat TAG)
-          ehco $TAG
+          echo $TAG
+      - name: Push to Docker Hub
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          tags: nicor88/dbt:${TAG}
