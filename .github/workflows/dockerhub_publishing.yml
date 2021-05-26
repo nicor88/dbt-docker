@@ -23,8 +23,7 @@ jobs:
       - name: Set tag
         run: |
           export TAG=$(cat TAG)
-          echo $TAG
-          echo '::set-output name=DOCKER_TAG::$TAG'
+          echo "::set-output name=DOCKER_TAG::${TAG}"
         id: set-tag
       - name: Push to Docker Hub
         uses: docker/build-push-action@v2
